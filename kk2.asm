@@ -132,6 +132,7 @@ ma1:
 	call Imu
 	call HeightDampening
 	call Mixer
+	call CameraStab
 	call Beeper
 	call Lva
 	call PwmEnd
@@ -185,7 +186,7 @@ ma6:
 
 	rjmp ma2
 
-
+.include "camstab.asm"
 .include "trigonometry.asm"
 .include "cppmsettings.asm"
 .include "checkrx.asm"

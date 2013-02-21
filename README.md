@@ -1,17 +1,11 @@
-Here is version 1.4
+Here is version 1.5 with roll/pitch camera stabilization.
 
-Changes:
+Roll servo goes to output 7 and pitch servo to output 8.
 
-1: SW LP-filter on the accelerometers.
+Turn it on by going to "Cam Stab Settings" screen and set the gains to a non-zero value. Start with 500. A negative value reverses servo direction. Adjust value until camera is steady.
 
-2: Widened the correction limits to +-20 degrees.
+Use the offset values to trim servo position, but keep the values close to 50% by adjusting servo linkage first.
 
-3: Use accelerometer generated Euler angles instead of 3D vector generated angles for the correction check as suggested by Scolton. I think this one really did the trick.
+Now I have to say that I have not tested this with an actual camera, but it should work.
 
-4: Widened the vertical acceleration check to 0.5 - 1.5g.
-
-5: It does not show the Euler angles on the safe screen until gyros has been calibrated to avoid confusion.
-
-Updating from V1.3 to V1.4 does not change your settings.
-
-Now it performs much better, it did not lose its UP direction at all, except for the special case of the toss test where the rotation rate exceeded the maximum that the gyros can handle. This will not happen during flight.
+This version will reset all settings to default due to changes in EEPROM usage.
